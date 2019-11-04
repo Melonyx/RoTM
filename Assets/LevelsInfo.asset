@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: LevelsInfo
+  m_EditorClassIdentifier: Assembly-CSharp::Levels
+  levels:
+  - name: "\u0410\u0432\u0442\u043E\u0431\u0443\u0441"
+    scene: Level_01_bus
+  - name: "\u0421\u0432\u0435\u0442\u043E\u0444\u043E\u0440"
+    scene: Level_02_trafficlight
