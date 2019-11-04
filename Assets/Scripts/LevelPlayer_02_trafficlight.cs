@@ -30,7 +30,7 @@ public class LevelPlayer_02_trafficlight : LevelPlayer
         if (trafficLight.material.color == Color.red)
         {
             StartCoroutine(WaitAndMove(1.5f, lada.transform, 1.5f, waypoints[4].position, waypoints[5].position));
-            yield return Move(child.transform, 3f, waypoints[2].position, waypoints[3].position);
+            yield return Move(child.transform, 3f, waypoints[2].position, waypoints[8].position);
             Handheld.Vibrate();
             resultUi.SetActive(true);
             resultText.text = "Вас сбила машина, будьте внимательны!\n<size=60%>Дорогу нужно переходить на зелёный сигнал светофора!</size>";
@@ -38,7 +38,7 @@ public class LevelPlayer_02_trafficlight : LevelPlayer
         else
         {
             StartCoroutine(Move(lada.transform, 1.5f, waypoints[4].position, waypoints[6].position));
-            yield return Move(child.transform, 4f, waypoints[2].position, waypoints[8].position);
+            yield return Move(child.transform, 4f, waypoints[2].position, waypoints[3].position);
             yield return Move(lada.transform, 3.8f, waypoints[6].position, waypoints[7].position);
             resultUi.SetActive(true);
             resultText.text = "Молодец!\n<size=60%>Дорогу нужно переходить на зелёный сигнал светофора!</size>";
