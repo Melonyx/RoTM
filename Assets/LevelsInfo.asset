@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 74b84b848a821ec4f99eca198d551e31, type: 3}
   m_Name: LevelsInfo
   m_EditorClassIdentifier: Assembly-CSharp::Levels
   levels:
-  - name: "\u0410\u0432\u0442\u043E\u0431\u0443\u0441"
+  - name: Bus
     scene: Level_01_bus
-  - name: "\u0421\u0432\u0435\u0442\u043E\u0444\u043E\u0440"
+  - name: Traffic light
     scene: Level_02_trafficlight
