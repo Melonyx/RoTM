@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_02_trafficlight.unity
     guid: 2a137a2ad23788d47a7f60f36ed9a378
+  - enabled: 1
+    path: Assets/Scenes/Level_03_kamaz.unity
+    guid: d9905cdcdf9120b40b3d9595469b9355
   m_configObjects: {}

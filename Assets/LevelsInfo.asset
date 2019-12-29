@@ -17,3 +17,5 @@ MonoBehaviour:
     scene: Level_01_bus
   - name: Traffic light
     scene: Level_02_trafficlight
+  - name: Kamaz
+    scene: Level_03_kamaz

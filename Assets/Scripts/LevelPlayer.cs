@@ -35,6 +35,22 @@ public abstract class LevelPlayer : MonoBehaviour
         transform.position = stop;
     }
 
+    protected IEnumerator MoveWithBouncing(Transform transform, float movingTime, Vector3 start, Vector3 stop, float period)
+    {
+        var amp = start.y - stop.y;
+        var time = 0f;
+
+        while (time < movingTime)
+        {
+            var position = Vector3.Lerp(start, stop, time / movingTime);
+            position.y = stop.y + amp * Mathf.Abs(Mathf.Cos(period*time)) * (movingTime - time) / movingTime;
+            transform.position = position;
+            yield return null;
+            time += Time.deltaTime;
+        }
+        transform.position = stop;
+    }
+
     private void Start()
     {
         Prepare();
