@@ -6,14 +6,14 @@ public class LevelPlayer_02_trafficlight : LevelPlayer
     public GameObject lamba;
     public GameObject lada;
     public GameObject child;
-    public MeshRenderer trafficLight;
+    public Trafficlight trafficLight;
 
     private int? _answer = null;
 
     protected override void Prepare()
     {
         base.Prepare();
-        trafficLight.material.color = Color.red;
+        trafficLight.SetColor(TrafficlightColor.Red);
     }
 
     protected override IEnumerator Level_Coroutine()
@@ -27,7 +27,7 @@ public class LevelPlayer_02_trafficlight : LevelPlayer
         yield return new WaitUntil(() => _answer != null);
         ui.SetActive(false);
         // Lada's race
-        if (trafficLight.material.color == Color.red)
+        if (trafficLight.Color != TrafficlightColor.Green)
         {
             StartCoroutine(WaitAndMove(1.5f, lada.transform, 1.5f, waypoints[4].position, waypoints[5].position));
             yield return Move(child.transform, 3f, waypoints[2].position, waypoints[8].position);
@@ -47,8 +47,10 @@ public class LevelPlayer_02_trafficlight : LevelPlayer
 
     private IEnumerator ShowTrafficLight()
     {
-        yield return new WaitForSeconds(7f);
-        trafficLight.material.color = Color.green;
+        yield return new WaitForSeconds(2f);
+        trafficLight.SetColor(TrafficlightColor.Yellow);
+        yield return new WaitForSeconds(5f);
+        trafficLight.SetColor(TrafficlightColor.Green);
     }
 
     public void SetAnswer(int answer)
