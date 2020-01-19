@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelsListController : MonoBehaviour
@@ -27,13 +24,7 @@ public class LevelsListController : MonoBehaviour
 
     private void OnButtonClicked(LevelInfo levelInfo)
     {
-        StartCoroutine(LoadLevel(levelInfo.scene));
+        KekSceneManager.LoadLevel(levelInfo.scene);
         _parent.gameObject.SetActive(false);
-    }
-
-    private IEnumerator LoadLevel(string name)
-    {
-        yield return SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
-        yield return SceneManager.UnloadSceneAsync("Menu");
     }
 }
